@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Sea Turtle Conservation</title>
   <style>
     * { box-sizing: border-box; }
@@ -95,6 +95,7 @@
       <button onclick="showSection('conservation')">Conservation</button>
       <button onclick="showSection('help')">How You Can Help</button>
       <button onclick="showSection('quiz')">Turtle Quiz!</button>
+      <button onclick="showSection('form')">Feedback</button>
     </nav>
   </header>
   <main>
@@ -112,6 +113,7 @@
       </ul>
       <img src="https://upload.wikimedia.org/wikipedia/commons/f/fc/Sea_turtle_swimming_over_coral_reef.jpg" alt="Sea Turtle swimming over coral reef">
     </section>
+
     <section id="threats">
       <h2>Threats They Face</h2>
       <p>Sea turtles face multiple threats, mostly caused by humans:</p>
@@ -124,6 +126,7 @@
       </ul>
       <img src="https://upload.wikimedia.org/wikipedia/commons/e/e1/Sea_turtle_in_plastic_pollution.jpg" alt="Sea turtle in plastic pollution">
     </section>
+
     <section id="conservation">
       <h2>Conservation Efforts</h2>
       <p>Organizations and communities worldwide are taking action:</p>
@@ -136,6 +139,7 @@
       </ul>
       <img src="https://upload.wikimedia.org/wikipedia/commons/3/3e/Olive_Ridley_Sea_Turtle_Tagging.jpg" alt="Sea turtle conservation tagging">
     </section>
+
     <section id="help">
       <h2>How You Can Help</h2>
       <ul>
@@ -147,19 +151,43 @@
       </ul>
       <img src="https://upload.wikimedia.org/wikipedia/commons/4/47/Turtle_conservation_Malaysia.jpg" alt="Volunteers helping turtles">
     </section>
+
     <section id="quiz">
       <h2>Turtle Trivia!</h2>
       <div class="quiz">
         <p>1. Which is the largest sea turtle species?</p>
         <label><input type="radio" name="q1" value="a">Green Turtle</label><br>
         <label><input type="radio" name="q1" value="b">Leatherback</label><br>
-        <label><input type="radio" name="q2" value="c">Jellyfish</label>
-        <br>
+        <label><input type="radio" name="q1" value="c">Loggerhead</label><br><br>
+
+        <p>2. What do sea turtles often mistake plastic for?</p>
+        <label><input type="radio" name="q2" value="a">Fish</label><br>
+        <label><input type="radio" name="q2" value="b">Rocks</label><br>
+        <label><input type="radio" name="q2" value="c">Jellyfish</label><br><br>
+
         <button onclick="checkQuiz()">Check Answers</button>
         <div class="quiz-result" id="quiz-result"></div>
       </div>
     </section>
+
+    <section id="form">
+      <h2>We'd Love Your Feedback!</h2>
+      <iframe 
+        src="https://docs.google.com/forms/d/e/1FAIpQLSevcTSVleLpuyA3CY_o5je9L1P5v-C2RkRf9EoEwqI93TuxZg/viewform?embedded=true" 
+        width="100%" 
+        height="800" 
+        frameborder="0" 
+        marginheight="0" 
+        marginwidth="0">
+        Loading…
+      </iframe>
+    </section>
   </main>
+
+  <footer>
+    Sea Turtle Awareness Project © 2025
+  </footer>
+
   <script>
     function showSection(id) {
       document.querySelectorAll("section").forEach(section => {
@@ -168,14 +196,13 @@
       document.getElementById(id).classList.add("active");
       window.scrollTo({top: 0, behavior: "smooth"});
     }
+
     function checkQuiz() {
       let score = 0;
       if (document.querySelector('input[name="q1"]:checked')?.value === "b") score++;
       if (document.querySelector('input[name="q2"]:checked')?.value === "c") score++;
-      document.getElementById("quiz-result").innerText = `You got ${score}/2 correct! `;
+      document.getElementById("quiz-result").innerText = `You got ${score}/2 correct!`;
     }
   </script>
 </body>
 </html>
-    
-       

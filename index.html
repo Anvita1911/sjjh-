@@ -73,17 +73,6 @@
       from { opacity: 0; transform: translateY(20px); }
       to { opacity: 1; transform: translateY(0); }
     }
-    .quiz {
-      margin-top: 20px;
-    }
-    .quiz input[type="radio"] {
-      margin-right: 10px;
-    }
-    .quiz-result {
-      margin-top: 10px;
-      font-weight: bold;
-      color: #00ffcc;
-    }
   </style>
 </head>
 <body>
@@ -95,9 +84,9 @@
       <button onclick="showSection('conservation')">Conservation</button>
       <button onclick="showSection('help')">How You Can Help</button>
       <button onclick="showSection('quiz')">Turtle Quiz!</button>
-      <button onclick="showSection('form')">Feedback</button>
     </nav>
   </header>
+
   <main>
     <section id="species" class="active">
       <h2>Sea Turtle Species</h2>
@@ -153,25 +142,7 @@
     </section>
 
     <section id="quiz">
-      <h2>Turtle Trivia!</h2>
-      <div class="quiz">
-        <p>1. Which is the largest sea turtle species?</p>
-        <label><input type="radio" name="q1" value="a">Green Turtle</label><br>
-        <label><input type="radio" name="q1" value="b">Leatherback</label><br>
-        <label><input type="radio" name="q1" value="c">Loggerhead</label><br><br>
-
-        <p>2. What do sea turtles often mistake plastic for?</p>
-        <label><input type="radio" name="q2" value="a">Fish</label><br>
-        <label><input type="radio" name="q2" value="b">Rocks</label><br>
-        <label><input type="radio" name="q2" value="c">Jellyfish</label><br><br>
-
-        <button onclick="checkQuiz()">Check Answers</button>
-        <div class="quiz-result" id="quiz-result"></div>
-      </div>
-    </section>
-
-    <section id="form">
-      <h2>We'd Love Your Feedback!</h2>
+      <h2>Turtle Quiz!</h2>
       <iframe 
         src="https://docs.google.com/forms/d/e/1FAIpQLSevcTSVleLpuyA3CY_o5je9L1P5v-C2RkRf9EoEwqI93TuxZg/viewform?embedded=true" 
         width="100%" 
@@ -195,13 +166,6 @@
       });
       document.getElementById(id).classList.add("active");
       window.scrollTo({top: 0, behavior: "smooth"});
-    }
-
-    function checkQuiz() {
-      let score = 0;
-      if (document.querySelector('input[name="q1"]:checked')?.value === "b") score++;
-      if (document.querySelector('input[name="q2"]:checked')?.value === "c") score++;
-      document.getElementById("quiz-result").innerText = `You got ${score}/2 correct!`;
     }
   </script>
 </body>
